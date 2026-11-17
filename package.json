@@ -1,0 +1,9 @@
+{
+  "name": "indago",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kültür sanat dünyasından güncel haberler için hafif bir RSS okuyucu.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

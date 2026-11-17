@@ -1,0 +1,5 @@
+# Local credentials and machine-specific settings
+local.config.json
+
+# Local RSS source list
+sources.json

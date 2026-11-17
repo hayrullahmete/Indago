@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f1" id="theme-color">
+  <meta name="description" content="Kültür, sanat, edebiyat ve popüler kültürden güncel haberler." id="page-description">
+  <title id="page-title">Indago — Dünyadan haberin olsun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" id="brand" href="/" aria-label="Indago ana sayfa" data-i18n-aria="brandHome"><span class="brand-icon">i</span><span>Indago</span></a>
+    <nav class="top-actions" aria-label="Görünüm ayarları" id="top-actions">
+      <div class="language-toggle" role="group" aria-label="Dil / Language" id="language-toggle">
+        <button type="button" data-language="tr" aria-pressed="true">TR</button><button type="button" data-language="en" aria-pressed="false">EN</button>
+      </div>
+      <div class="font-controls" role="group" aria-label="Yazı boyutu" data-i18n-aria="fontGroup">
+        <button class="font-button" id="font-smaller" type="button" aria-label="Yazıyı küçült" title="Yazıyı küçült" data-i18n-aria="fontSmaller" data-i18n-title="fontSmaller">A−</button>
+        <button class="font-button font-reset" id="font-reset" type="button" aria-label="Varsayılan yazı boyutu" title="Varsayılan yazı boyutu" data-i18n-aria="fontDefault" data-i18n-title="fontDefault">A</button>
+        <button class="font-button font-larger" id="font-larger" type="button" aria-label="Yazıyı büyüt" title="Yazıyı büyüt" data-i18n-aria="fontLarger" data-i18n-title="fontLarger">A+</button>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Koyu temaya geç" title="Koyu temaya geç">
+        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.3A8.7 8.7 0 0 1 8.7 3.8 8.8 8.8 0 1 0 20.2 15.3Z"/></svg>
+        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        <span class="theme-track"><span class="theme-thumb"></span></span>
+        <span class="theme-label" data-i18n="themeDark">Gece</span>
+      </button>
+      <a class="about-link" href="#kaynaklar"><span data-i18n="sourcesLink">Kaynaklar</span> <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="eyebrow">GÜNCEL AKIŞ</span></div>
+      <h1 id="hero-title">Dünyadan <span data-i18n="heroEmphasis">haberin olsun.</span></h1>
+      <p><span data-i18n="introLine1">Edebiyattan sinemaya, müzikten popüler kültüre…</span><br class="desktop-break"> <span data-i18n="introLine2">Merak ettiğin her şey, sevdiğin kaynaklardan.</span></p>
+      <div class="intro-bottom"><span class="status"><span class="live-dot"></span> <span data-i18n="liveFeed">Canlı RSS akışı</span></span><span class="updated" id="updated" data-i18n="loadingNews">Haberler alınıyor…</span></div>
+    </section>
+
+    <section class="feed-section" aria-labelledby="feed-title">
+      <div class="section-heading"><div><span class="section-kicker" data-i18n="feedKicker">KAYNAKLARINDAN</span><h2 id="feed-title"><span data-i18n="feedTitle">Son haberler</span><span class="heading-period">.</span></h2></div><div class="feed-controls"><label class="limit-control" for="news-limit"><span data-i18n="last">Son</span><select id="news-limit" aria-label="Gösterilecek haber sayısı" data-i18n-aria="newsLimit"><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option></select><span data-i18n="newsPlural">haber</span></label><span class="article-count" id="article-count">— HABER</span></div></div>
+      <div id="feed" class="feed" aria-live="polite"><div class="loading"><span class="loader"></span> <span data-i18n="scanningSources">Kaynaklar taranıyor…</span></div></div>
+      <div id="notice" class="notice" hidden></div>
+    </section>
+
+    <section class="sources-section" id="kaynaklar" aria-labelledby="sources-title">
+      <div class="sources-label"><span class="section-kicker" data-i18n="sourcesKicker">TAKİPTEYİZ</span><h2 id="sources-title"><span data-i18n="sourcesTitle">İyi kaynaklar,</span><br><span data-i18n="sourcesSubtitle">iyi hikâyeler.</span></h2></div>
+      <div id="source-list" class="source-list"><span class="source-placeholder" data-i18n="loadingSources">Kaynaklar yükleniyor…</span></div>
+    </section>
+  </main>
+
+  <dialog class="summary-dialog" id="summary-dialog" aria-labelledby="summary-title">
+    <div class="summary-dialog-head"><div><span class="section-kicker" data-i18n="summaryKicker">AI HABER ÖZETİ</span><span id="summary-provider" class="summary-provider" hidden></span><h2 id="summary-title">Haber özeti</h2></div><button id="summary-close" class="summary-close" type="button" aria-label="Özeti kapat" data-i18n-aria="closeSummary">×</button></div>
+    <div id="summary-body" class="summary-body" aria-live="polite"></div>
+  </dialog>
+
+  <footer><a class="brand footer-brand" href="/">Indago<span>.</span></a><span data-i18n="footerTagline">Dünyadan haberin olsun.</span><span class="footer-date" data-i18n="footerNote">BAĞIMSIZ MERAKIN GÜNLÜK AKIŞI</span></footer>
+</body>
+</html>
